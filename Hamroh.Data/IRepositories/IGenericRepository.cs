@@ -11,12 +11,12 @@ namespace Hamroh.Data.IRepositories
     { 
         Task<T> CreateAsync(T entity);
       
-        Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null);
+        IEnumerable<T> GetAll(Expression<Func<T, bool>> predicate = null);
 
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
         
         Task<bool> DeleteAsync(Expression<Func<T, bool>> predicate);
 
-        Task<T> UpdateAsync(T entity);
+        T UpdateAsync(T entity);
     }
 }
